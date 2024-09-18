@@ -1,0 +1,25 @@
+/* Mobile screen: 1 item visible, full width */
+@media (max-width: 510px) {
+  .cCarousel-item {
+    width: 90%; /* Full width for mobile */
+  }
+}
+
+/* Tablet screen: 2 items visible, half width */
+@media (min-width: 511px) and (max-width: 770px) {
+  .cCarousel-item {
+    width: 50%; /* Half width for tablet */
+  }
+}
+
+/* Large screen: 3 items visible, one-third width */
+@media (min-width: 771px) {
+  .cCarousel-item {
+    width: 33.33%; /* One-third width for large screens */
+  }
+}
+
+/* custom button  */
+/* CSS */
+
+/* tables*/
