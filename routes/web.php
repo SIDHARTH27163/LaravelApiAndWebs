@@ -11,10 +11,10 @@ use App\Http\Controllers\LocationController;
 // use App\Http\Middleware\LogRequestMiddleware;
 // Route::middleware(LogRequestMiddleware::class)->group(function () {
 // Public routes
-Route::get('/', function () {
-    return view('welcome');
-});
-
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/', [TouristPlaceController::class, 'home'])->name('touristplaces.home');
 // Admin routes
 Route::prefix('admin')->group(function () {
     // Admin dashboard route
