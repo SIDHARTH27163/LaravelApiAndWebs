@@ -26,7 +26,7 @@
 
    @foreach ($posts as $place )
 <article class="flex gap-2 drop-shadow-lg  bg-white   my-1 transform transition hover:scale-110 duration-500 ease-in-out hover:rounded-lg">
-    <img loading="lazy" src="{{ asset('storage/' . $place->location->image) }}" class="object-contain z-10 shrink-0 aspect-[1.1] w-[94px]" alt="Article preview image" />
+    <img loading="lazy" src="{{ asset($place->location->image) }}" class="object-contain z-10 shrink-0 aspect-[1.1] w-[94px]" alt="Article preview image" />
     <a href="{{ route('touristplaces.viewplace', ['title' => str_replace(' ', '-', $place->title)]) }}" class="flex flex-col grow shrink-0 self-start mt-0 basis-0 w-fit">
         <header class="self-start text-xs font-medium  text-neutral-950">
             <time datetime="2018-09-17">{{$place->created_at->format('F j, Y')}} - {{$place->location->name}}</time>
@@ -50,9 +50,10 @@
     <header class=" py-5 w-full text-3xl font-bold leading-none text-black bg-white">
       <h2 class="text-center">Popular Post</h2>
     </header>
+    {{-- {{ asset('blog_images/'.$blog->image) }} --}}
     <article class="flex flex-col px-1 mt-4 w-full bg-blue-800 bg-opacity-30 ">
       <a href="{{ route('touristplaces.viewplace', ['title' => str_replace(' ', '-', $latestPost->title)]) }}" class="flex relative flex-col items-start px-8 py-10 w-full min-h-[364px]">
-        <img loading="lazy" src="{{ asset('storage/' . $latestPost->location->image) }}" class="object-cover absolute inset-0 size-full" alt="Background image for popular post" />
+        <img loading="lazy" src="{{ asset($latestPost->location->image) }}" class="object-cover absolute inset-0 size-full" alt="Background image for popular post" />
         <p class="relative self-stretch text-2xl font-medium leading-9 text-white">
             {{ $latestPost->created_at->format('F d, Y') }} -  {{ $latestPost->location->name }}
         </p>

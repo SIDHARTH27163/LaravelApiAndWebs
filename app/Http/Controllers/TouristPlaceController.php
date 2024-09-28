@@ -99,11 +99,14 @@ class TouristPlaceController extends Controller
 
             // Handle gallery images
             foreach ($request->file('gallery') as $image) {
-                $imagePath = $image->store('places_galleries', 'public'); // Save image to the 'public/galleries' directory
+                // Generate a unique image name
+                $imageName = uniqid() . '.' . $image->getClientOriginalExtension();
+                // Save image directly to the public/places_galleries directory
+                $imagePath = $image->move(public_path('places_galleries'), $imageName);
 
                 PlacesGallery::create([
                     'tourist_place_id' => $touristPlace->id,
-                    'gallery' => $imagePath,
+                    'gallery' => 'places_galleries/' . $imageName, // Store the relative path in the database
                 ]);
             }
         });
@@ -111,6 +114,7 @@ class TouristPlaceController extends Controller
         // Redirect to the appropriate route with a success message
         return redirect()->route('touristplaces.index')->with('success', 'Tourist Place and related resources created successfully');
     }
+
 
 
     public function edit($id)
@@ -134,8 +138,6 @@ class TouristPlaceController extends Controller
 
     public function update(Request $request, $id)
     {
-
-
         \DB::transaction(function () use ($request, $id) {
             // Update TouristPlace
             $touristPlace = TouristPlace::findOrFail($id);
@@ -166,30 +168,36 @@ class TouristPlaceController extends Controller
                 'transportation' => $request->input('transportation'),
             ]);
 
+            // Delete old gallery images
+            $oldImages = PlacesGallery::where('tourist_place_id', $touristPlace->id)->get();
+            foreach ($oldImages as $oldImage) {
+                // Delete the file from the public folder
+                $filePath = public_path($oldImage->gallery);
+                if (file_exists($filePath)) {
+                    unlink($filePath); // Use unlink to delete the file
+                }
+                // Delete the record from the database
+                $oldImage->delete();
+            }
 
-                   // Delete old gallery images
-        $oldImages = PlacesGallery::where('tourist_place_id', $touristPlace->id)->get();
-        foreach ($oldImages as $oldImage) {
-            // Delete the file from the storage
-            Storage::disk('public')->delete($oldImage->gallery);
-            // Delete the record from the database
-            $oldImage->delete();
-        }
+            // Save the new gallery images
+            foreach ($request->file('gallery') as $image) {
+                // Generate a unique image name
+                $imageName = uniqid() . '.' . $image->getClientOriginalExtension();
+                // Move image directly to the public/places_galleries directory
+                $imagePath = $image->move(public_path('places_galleries'), $imageName);
 
-        // Save the new gallery images
-        foreach ($request->file('gallery') as $image) {
-            $imagePath = $image->store('places_galleries', 'public'); // Save image to the 'public/places_galleries' directory
-
-            PlacesGallery::create([
-                'tourist_place_id' => $touristPlace->id,
-                'gallery' => $imagePath,
-            ]);
-        }
+                PlacesGallery::create([
+                    'tourist_place_id' => $touristPlace->id,
+                    'gallery' => 'places_galleries/' . $imageName, // Store the relative path in the database
+                ]);
+            }
         });
 
         // Redirect to the appropriate route with a success message
         return redirect()->route('touristplaces.index')->with('success', 'Tourist Place and related resources updated successfully');
     }
+
 
     public function destroy($id)
     {

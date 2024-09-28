@@ -5,33 +5,9 @@
     "isEntry": true
   },
   "resources/css/app.css": {
-    "file": "assets/app-DPvyHkfm.css",
+    "file": "assets/app-D_hCgq58.css",
     "src": "resources/css/app.css",
     "isEntry": true
-  },
-  "resources/css/fonts/Merriweather-Light.ttf": {
-    "file": "assets/Merriweather-Light-B70-7h_b.ttf",
-    "src": "resources/css/fonts/Merriweather-Light.ttf"
-  },
-  "resources/css/fonts/Merriweather-Regular.ttf": {
-    "file": "assets/Merriweather-Regular-rtU9Xc2a.ttf",
-    "src": "resources/css/fonts/Merriweather-Regular.ttf"
-  },
-  "resources/css/fonts/Montserrat-Medium.ttf": {
-    "file": "assets/Montserrat-Medium-DZ4qtIu-.ttf",
-    "src": "resources/css/fonts/Montserrat-Medium.ttf"
-  },
-  "resources/css/fonts/PlaywriteDEGrund-VariableFont_wght.ttf": {
-    "file": "assets/PlaywriteDEGrund-VariableFont_wght-uJ25rfUC.ttf",
-    "src": "resources/css/fonts/PlaywriteDEGrund-VariableFont_wght.ttf"
-  },
-  "resources/css/fonts/Roboto-Medium.ttf": {
-    "file": "assets/Roboto-Medium-CFKDKRMh.ttf",
-    "src": "resources/css/fonts/Roboto-Medium.ttf"
-  },
-  "resources/css/fonts/Roboto-Regular.ttf": {
-    "file": "assets/Roboto-Regular-BHeBnKzs.ttf",
-    "src": "resources/css/fonts/Roboto-Regular.ttf"
   },
   "resources/css/home.css": {
     "file": "assets/home-tc33KCzg.css",
@@ -55,26 +31,18 @@
     "isEntry": true
   },
   "resources/js/app.js": {
-    "file": "assets/app-8rQnqQH5.js",
+    "file": "assets/app-Cu-3Q78Q.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true
   },
   "resources/js/editor.js": {
-    "file": "assets/editor-BvX5ffmb.js",
+    "file": "assets/editor-CAcWC0U9.js",
     "name": "editor",
     "src": "resources/js/editor.js",
     "isEntry": true,
     "css": [
-      "assets/editor-4NrGFdfz.css"
-    ],
-    "assets": [
-      "assets/Roboto-Regular-BHeBnKzs.ttf",
-      "assets/Roboto-Medium-CFKDKRMh.ttf",
-      "assets/PlaywriteDEGrund-VariableFont_wght-uJ25rfUC.ttf",
-      "assets/Merriweather-Light-B70-7h_b.ttf",
-      "assets/Merriweather-Regular-rtU9Xc2a.ttf",
-      "assets/Montserrat-Medium-DZ4qtIu-.ttf"
+      "assets/editor-CfrVSSBh.css"
     ]
   },
   "resources/js/navbar.js": {

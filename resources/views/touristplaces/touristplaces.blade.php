@@ -82,7 +82,7 @@
                     @if($firstItem->isNotEmpty())
                     @include('components.default-card', [
 
-                        'image'=>asset('storage/' .$firstItem->first()->location->image),
+                        'image'=>asset($firstItem->first()->location->image),
                         'date' => $firstItem->first()->created_at->format('F j, Y'),
                         'title' => $firstItem->first()->title,
                         'comment' => 'Comments',
@@ -100,7 +100,7 @@
 
                         @foreach($firstSet as $place)
                         @include('components.default-card', [
-                        'image' => asset('storage/' . $place->location->image),
+                        'image' => asset( $place->location->image),
                         'date' => $place->created_at->format('F j, Y'),
                         'title' => $place->title,
                         'comment' => 'Comments',
@@ -118,7 +118,7 @@
                   <div class="flex flex-col font-medium text-black max-w-5xl">
                     @if($staticItem->isNotEmpty())
                     @include('components.default-card', [
-                         'image'=>asset('storage/' .$place->location->image),
+                         'image'=>asset($place->location->image),
                         'date' => $firstItem->first()->created_at->format('F j, Y'),
                         'title' => $firstItem->first()->title,
                         'comment' => 'Comments',
@@ -138,7 +138,7 @@
     <div class="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 grid-cols-2  gap-3 py-5">
         @foreach($secondSet as $place)
         @include('components.default-card', [
-                           'image'=>asset('storage/' .$place->location->image),
+                           'image'=>asset($place->location->image),
                             'date' => $place->created_at->format('F j, Y'),
                             'title' => $place->title,
                             'comment' => 'Comments',

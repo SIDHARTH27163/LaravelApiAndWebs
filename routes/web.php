@@ -1,4 +1,8 @@
 <?php
+// middlewares
+
+use App\Http\Middleware\EnsureUserIsAdmin;
+// /middleware end
 use App\Http\Controllers\ITServiceController;
 use App\Http\Controllers\ITCaseStudiesController;
 use Illuminate\Support\Facades\Route;
@@ -8,17 +12,30 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\TouristPlaceController;
 use App\Http\Controllers\LocationController;
 use App\Http\controllers\FooterController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\Auth\PasswordController;
 
 // use App\Http\Middleware\LogRequestMiddleware;
 // Route::middleware(LogRequestMiddleware::class)->group(function () {
 // Public routes
+Route::get('/login', [AuthenticatedSessionController::class, 'create'])
+    ->name('login');
+Route::post('/login', [AuthenticatedSessionController::class, 'store']);
+Route::get('/logout', [AuthenticatedSessionController::class, 'destroy'])
+    ->name('logout');
+
+// Registration Routes
+Route::get('/register', [RegisteredUserController::class, 'create'])
+    ->name('register');
+Route::post('/register', [RegisteredUserController::class, 'store']);
 Route::get('/', function () {
     return view('welcome');
 });
 Route::view('home', 'home');
 
 // Admin routes
-Route::prefix('admin')->group(function () {
+Route::prefix('admin')->middleware(['auth', EnsureUserIsAdmin::class])->group(function () {
     // Admin dashboard route
     Route::view('/', 'admin.admin')->name('admin.dashboard');
     Route::get('footer/edit/{type}', [FooterController::class, 'edit'])->name('footer.edit');
@@ -69,3 +86,4 @@ Route::prefix('touristplaces')->group(function () {
 });
 // routes/web.php
 Route::get('/{type}', [FooterController::class, 'show'])->where('type', 'privacy-policy|terms-and-conditions|about-us|disclaimer');
+// require __DIR__.'/auth.php';

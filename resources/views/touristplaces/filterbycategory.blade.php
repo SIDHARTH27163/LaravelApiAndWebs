@@ -81,7 +81,7 @@
                         @if($touristPlaces->count())
                         @foreach($touristPlaces as $place)
                         @include('components.default-card', [
-                             'image'=>asset('storage/' .$place->location->image),
+                             'image'=>asset($place->location->image),
                             'date' => $place->created_at->format('F j, Y'),
                             'title' => $place->title,
                             'comment' => 'Comments',

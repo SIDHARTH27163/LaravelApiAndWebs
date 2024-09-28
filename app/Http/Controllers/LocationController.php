@@ -18,7 +18,6 @@ class LocationController extends Controller
     // Show the form for creating a new location.
     public function create()
     {
-
         return view('admin.managelocations');
     }
 
@@ -31,9 +30,19 @@ class LocationController extends Controller
             'image' => 'required|image|max:2048',
         ]);
 
-        // Handle image upload
-        $imagePath = $request->file('image') ? $request->file('image')->store('locations', 'public') : null;
+        // Handle image upload directly to the public folder
+        $imagePath = null; // Initialize the variable to hold the image path
 
+        if ($request->file('image')) {
+            // Generate a unique filename
+            $imageName = time() . '_' . uniqid() . '.' . $request->file('image')->getClientOriginalExtension();
+            // Move the uploaded image to the public/locations directory
+            $request->file('image')->move(public_path('locations'), $imageName);
+            // Set the image path to the relative URL
+            $imagePath = 'locations/' . $imageName;
+        }
+
+        // Create a new location entry in the database
         Location::create([
             'name' => $request->input('name'),
             'address' => $request->input('address'),
@@ -44,21 +53,21 @@ class LocationController extends Controller
     }
 
     // Show the form for editing the specified location.
-    public function edit(Location $location , $id)
+    public function edit(Location $location, $id)
     {
         $location = Location::find($id);
 
         // Check if the record exists
         if (!$location) {
-            // Handle the case where the record is not found
             return redirect()->route('managelocations.index')->with('error', 'Location not found.');
         }
         return view('admin.managelocations', compact('location'));
     }
 
     // Update the specified location in storage.
-    public function update(Request $request, Location $location , $id)
+    public function update(Request $request, $id)
     {
+        // Find the location record by ID
         $location = Location::find($id);
 
         // Check if the record exists
@@ -66,6 +75,7 @@ class LocationController extends Controller
             return redirect()->route('managelocations.index')->with('error', 'Location not found.');
         }
 
+        // Validate the request
         $request->validate([
             'name' => 'required|string|max:255',
             'address' => 'required|string|max:255',
@@ -76,30 +86,44 @@ class LocationController extends Controller
         if ($request->hasFile('image')) {
             // Delete the old image if it exists
             if ($location->image) {
-                Storage::disk('public')->delete($location->image);
+                $oldImagePath = public_path($location->image);
+                if (file_exists($oldImagePath)) {
+                    unlink($oldImagePath); // Delete the old image
+                }
             }
-            $imagePath = $request->file('image')->store('locations', 'public');
+
+            // Generate a unique filename for the new image
+            $imageName = time() . '_' . uniqid() . '.' . $request->file('image')->getClientOriginalExtension();
+            // Move the uploaded image to the public/locations directory
+            $request->file('image')->move(public_path('locations'), $imageName);
+            $imagePath = 'locations/' . $imageName; // Set the image path
         } else {
-            $imagePath = $location->image;
+            $imagePath = $location->image; // Keep the old image if none is uploaded
         }
 
+        // Update the location record
         $location->update([
             'name' => $request->input('name'),
             'address' => $request->input('address'),
-            'image' => $imagePath,
+            'image' => $imagePath, // Save the path relative to public
         ]);
 
         return redirect()->route('managelocations.index')->with('success', 'Location updated successfully.');
     }
 
     // Remove the specified location from storage.
-    public function destroy(Location $location , $id)
+    public function destroy($id)
     {
         try {
-            // Find the ITService record by ID
+            // Find the location record by ID
             $location = Location::findOrFail($id);
+
+            // Delete the associated image from the public folder
             if ($location->image) {
-                Storage::disk('public')->delete($location->image);
+                $imagePath = public_path($location->image);
+                if (file_exists($imagePath)) {
+                    unlink($imagePath); // Delete the image file
+                }
             }
 
             // Delete the record
@@ -109,15 +133,13 @@ class LocationController extends Controller
             return redirect()->route('managelocations.index')->with('success', 'Location deleted successfully.');
         } catch (\Exception $e) {
             // Log the error for debugging
-            \Log::error('Failed to delete IT Service: ' . $e->getMessage());
+            \Log::error('Failed to delete location: ' . $e->getMessage());
 
             // Redirect with error message
-            return redirect()->route('managelocations.index')->with('error', 'Failed to delete IT Service.');
+            return redirect()->route('managelocations.index')->with('error', 'Failed to delete location.');
         }
-
-
-
     }
+
     public function changeStatus(Request $request, $id)
     {
         // Validate that the ID is provided in the request
@@ -128,8 +150,6 @@ class LocationController extends Controller
         }
 
         // Toggle the status value
-        $currentStatus = $location->status;
-        // $newStatus = !$currentStatus; // If current status is true, new status will be false and vice versa
         $newStatus = ($location->status === 'active') ? 'inactive' : 'active';
         // Update the location status
         $location->update([
@@ -139,4 +159,3 @@ class LocationController extends Controller
         return redirect()->route('managelocations.index')->with('success', 'Location status updated successfully.');
     }
 }
-

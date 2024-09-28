@@ -110,7 +110,7 @@
                           </div>
                         </div>
                         <div class="flex flex-col pl-10 mt-5 w-full text-lg  tracking-wide leading-10 text-black max-md:pl-5 max-md:mt-10 ">
-                          <img loading="lazy" src={{asset('storage/' .$place->location->image)}} alt="" class="object-contain w-full aspect-[2.75] " />
+                          <img loading="lazy" src={{asset($place->location->image)}} alt="" class="object-contain w-full aspect-[2.75] " />
                          <!-- Display Tips -->
                         @if($place->tips->isNotEmpty())
                         @foreach($place->tips as $tip)
@@ -185,7 +185,7 @@
                           <div class="mx-auto  grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
                             @if($place->gallery->isNotEmpty())
                             @foreach($place->gallery as $image)
-                                <img src="{{ asset('storage/' . $image->gallery) }}" alt="{{ $place->title }}" class="h-64 w-full aspect-[2.75] ">
+                                <img src="{{ asset( $image->gallery) }}" alt="{{ $place->title }}" class="h-64 w-full aspect-[2.75] ">
                             @endforeach
                         @else
                             <p>No images available</p>

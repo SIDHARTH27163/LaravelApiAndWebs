@@ -121,7 +121,7 @@
                                 @foreach ($locations as $location)
                                     <tr class="border-b dark:border-gray-700 font-Robotomedium">
                                         <td class="px-4 py-3">
-                                            <img src="{{ asset('storage/' . $location->image) }}" alt="Image"
+                                            <img src="{{ asset( $location->image) }}" alt="Image"
                                                 width="100">
                                         </td>
                                         <td class="px-4 py-3">
