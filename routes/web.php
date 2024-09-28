@@ -14,6 +14,7 @@ use App\Http\Controllers\LocationController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::view('home', 'home');
 
 // Admin routes
 Route::prefix('admin')->group(function () {
@@ -52,10 +53,13 @@ Route::prefix('admin')->group(function () {
 
 Route::post('/upload', [ImageUploadController::class, 'upload']);
 
-// });
+
 Route::prefix('touristplaces')->group(function () {
     Route::get('/', [TouristPlaceController::class, 'home'])->name('touristplaces.home');
     Route::get('popularplaces', [TouristPlaceController::class, 'popularPlaces'])->name('touristplaces.popularplaces');
-    Route::get('{title}', [TouristPlaceController::class, 'viewtouristplace'])->name('touristplaces.viewplace');
-    Route::get('{category}', [TouristPlaceController::class, 'filterbyCategory'])->name('touristplaces.filterPlaceCategory');
+    Route::get('{title}', [TouristPlaceController::class, 'viewtouristplace'])->name('touristplaces.viewplace')
+        ->where('title', '[A-Za-z0-9\-]+'); // Restrict to only match titles
+
+    // Add a prefix to distinguish category from title
+    Route::get('Category/{category}', [TouristPlaceController::class, 'filterbyCategory'])->name('touristplaces.filterPlaceCategory');
 });

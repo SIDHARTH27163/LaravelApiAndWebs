@@ -1,8 +1,7 @@
 @vite('resources/css/styles.css')
 @vite('resources/js/style.js')
-<section class=" px-5 container mx-auto">
-
-    <div id="cCarousel" class="relative mx-auto px-1">
+<section class=" px-5 container mx-auto  py-16 ">
+    <div id="cCarousel" class="relative mx-auto px-1 fadeInUp scroll-animation section">
         <div class="flex items-center justify-center ">
             <div class="flex flex-col items-center text-center">
                 <div class="bg-gradient-to-br from-[#F76680] to-[#57007B] h-[5px] w-[69px]" aria-hidden="true"></div>

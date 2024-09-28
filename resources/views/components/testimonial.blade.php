@@ -3,7 +3,7 @@
     <!-- Scripts -->
 
     @vite('resources/js/testimonial.js')
-<section id="testimonial-carousel" class="relative flex flex-col items-center px-5 text-center max-md:flex-wrap Roboto-medium pb-10 bg-neutral-100 py-10">
+<section id="testimonial-carousel" class="relative flex flex-col items-center px-5 text-center max-md:flex-wrap Roboto-medium pb-10 bg-neutral-100 py-10 fadeInUp scroll-animation section">
 
   <div class="flex flex-col justify-between items-center self-stretch  max-w-7xl mx-auto ">
     <div class="shrink-0 bg-[linear-gradient(225deg,#F76680_0%,#57007B_100%)] h-[5px] w-[69px]"></div>

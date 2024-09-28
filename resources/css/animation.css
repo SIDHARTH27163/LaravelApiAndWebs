@@ -1,0 +1,69 @@
+.scroll-animation {
+    opacity: 0;  /* Initially hidden */
+    transition: opacity 0.5s ease;
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0%);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInDown {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0%);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInLeft {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0%);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInRight {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0%);
+      opacity: 1;
+    }
+  }
+
+  /* Generic animation classes */
+  .fadeInUp {
+    animation: fadeInUp 2s ease-in-out forwards;
+  }
+  .fadeInDown {
+    animation: fadeInDown 1.5s forwards;
+  }
+
+  .fadeInLeft {
+    animation: fadeInLeft 1.5s forwards;
+  }
+
+  .fadeInRight {
+    animation: fadeInRight 1.5s forwards;
+  }
+
+  /* This class makes the element visible and triggers the animation */
+  .animate {
+    opacity: 1;
+  }
