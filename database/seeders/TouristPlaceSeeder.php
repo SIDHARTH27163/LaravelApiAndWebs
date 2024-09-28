@@ -34,10 +34,10 @@ class TouristPlaceSeeder extends Seeder
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
         // Create 5 locations
-        $locations = Location::factory()->count(10)->create();
+        $locations = Location::factory()->count(5)->create();
 
         // Create 10 tourist places and associated data
-        foreach (range(1, 100) as $index) {
+        foreach (range(1, 20) as $index) {
             $location = $locations->random();
 
             // Create the TouristPlace
@@ -74,11 +74,11 @@ class TouristPlaceSeeder extends Seeder
                 'transportation' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' . $index,
             ]);
             $imageUrls = [
-                'places_galleries/7PygKBZkMVl4kuNWErN7lEMwI62BnhmueBYJgLjA.jpg',
-                'places_galleries/7VgMGuGSBEEbOlOGhD2mU63gkeqdij3XwNGBWH5Q.jpg',
-                'places_galleries/c5oHt9WhvVBslcPTbCS2tAWbQbwRvXRksvrxEOp4.jpg',
-                'places_galleries/Mda1AlA7mYaJw9PomLqwqLp7pWRk8fg33ylnme5d.jpg',
-                'places_galleries/NKLuIBTY1VmI2gadWnyPDh8NaSAN0hGGyCgdsFBU.jpg'
+                'places_galleries/2lu0s69qXXZ190uDD7HlhtC9Cg4wPTqRE2gKIwZ0.jpg',
+                'places_galleries/hRAbvTKahkEIodMaYBLRKAV1uSV0hV0HjRfTkoS1.jpg',
+                'places_galleries/KzyVgIWddIgeR3zltRFuvRZpH6jlBxyApU8lTqQu.jpg',
+                'places_galleries/Pl2NTqTqdelAJO163DOfqNXUdpHzeiu0NbMnzfey.jpg',
+                'places_galleries/TUKKXJrDPDigghnXoGUKhwqvdlaf1ZWCeIsRMdOc.jpg'
             ];
 
             // Create a gallery with 3 images for each TouristPlace

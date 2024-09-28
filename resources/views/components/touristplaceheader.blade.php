@@ -26,14 +26,16 @@
             <a id="navitem1" class="toggleColour2 hover:bg-slate-900 hover:text-white text-yellow-500 inline-block text-xl hover:shadow-lg hover:rounded-xl  no-underline  transform transition hover:scale-105 duration-500 ease-in-out py-2 px-4 font-bold" href="/touristplaces/popularplaces">Popular Places</a>
           </li>
 
-          <li class="mr-0">
+          {{-- <li class="mr-0">
             <a id="navitem2" class="toggleColour3 hover:bg-slate-900 hover:text-white text-yellow-500 inline-block text-xl hover:shadow-lg hover:rounded-xl  no-underline  transform transition hover:scale-105 duration-500 ease-in-out py-2 px-4 font-bold" href="/categories">Categories</a>
-          </li>
+          </li> --}}
           {{-- <li class="mr-0">
             <a id="navitem1" class="toggleColour6 hover:bg-slate-900 hover:text-white text-yellow-500 inline-block text-xl hover:shadow-lg hover:rounded-xl  no-underline  transform transition hover:scale-105 duration-500 ease-in-out py-2 px-4 font-bold" href="/services">Services</a>
           </li> --}}
 
+@error ('record')
 
+@enderror
 
 
         </ul>

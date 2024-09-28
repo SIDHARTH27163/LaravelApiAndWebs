@@ -20,10 +20,10 @@
               <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/4c90f2f880b8e3a4bbcd4a7a9fea6d73c4951645c2672b00eb00ccd76f42d2c2?placeholderIfAbsent=true&apiKey=c81a87a8b87043acac16b0e47d857063" alt="" class="object-contain shrink-0 mt-3 aspect-[0.73] w-[10px]" />
               <p class=" mt-1">{{$location}}</p>
             </div>
-            <div class="flex gap-1 lg:text-base md:text-base sm:text-xs text-xs mt-2 items-start leading-10 whitespace-nowrap">
+            {{-- <div class="flex gap-1 lg:text-base md:text-base sm:text-xs text-xs mt-2 items-start leading-10 whitespace-nowrap">
                 <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/4c90f2f880b8e3a4bbcd4a7a9fea6d73c4951645c2672b00eb00ccd76f42d2c2?placeholderIfAbsent=true&apiKey=c81a87a8b87043acac16b0e47d857063" alt="" class="object-contain shrink-0 mt-3 aspect-[0.73] w-[10px]" />
                 <p class=" mt-1">{{$comment}}</p>
-              </div>
+              </div> --}}
           </footer>
 
 

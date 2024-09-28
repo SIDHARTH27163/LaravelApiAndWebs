@@ -1,0 +1,104 @@
+{
+  "resources/css/animation.css": {
+    "file": "assets/animation-D0fs2wQf.css",
+    "src": "resources/css/animation.css",
+    "isEntry": true
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-DPvyHkfm.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/css/fonts/Merriweather-Light.ttf": {
+    "file": "assets/Merriweather-Light-B70-7h_b.ttf",
+    "src": "resources/css/fonts/Merriweather-Light.ttf"
+  },
+  "resources/css/fonts/Merriweather-Regular.ttf": {
+    "file": "assets/Merriweather-Regular-rtU9Xc2a.ttf",
+    "src": "resources/css/fonts/Merriweather-Regular.ttf"
+  },
+  "resources/css/fonts/Montserrat-Medium.ttf": {
+    "file": "assets/Montserrat-Medium-DZ4qtIu-.ttf",
+    "src": "resources/css/fonts/Montserrat-Medium.ttf"
+  },
+  "resources/css/fonts/PlaywriteDEGrund-VariableFont_wght.ttf": {
+    "file": "assets/PlaywriteDEGrund-VariableFont_wght-uJ25rfUC.ttf",
+    "src": "resources/css/fonts/PlaywriteDEGrund-VariableFont_wght.ttf"
+  },
+  "resources/css/fonts/Roboto-Medium.ttf": {
+    "file": "assets/Roboto-Medium-CFKDKRMh.ttf",
+    "src": "resources/css/fonts/Roboto-Medium.ttf"
+  },
+  "resources/css/fonts/Roboto-Regular.ttf": {
+    "file": "assets/Roboto-Regular-BHeBnKzs.ttf",
+    "src": "resources/css/fonts/Roboto-Regular.ttf"
+  },
+  "resources/css/home.css": {
+    "file": "assets/home-tc33KCzg.css",
+    "src": "resources/css/home.css",
+    "isEntry": true
+  },
+  "resources/css/styles.css": {
+    "file": "assets/styles-BfFpd06J.css",
+    "src": "resources/css/styles.css",
+    "isEntry": true
+  },
+  "resources/css/testimonial.css": {
+    "file": "assets/testimonial-qRXTcw7L.css",
+    "src": "resources/css/testimonial.css",
+    "isEntry": true
+  },
+  "resources/js/animation.js": {
+    "file": "assets/animation-B7IBlzuf.js",
+    "name": "animation",
+    "src": "resources/js/animation.js",
+    "isEntry": true
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-8rQnqQH5.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  },
+  "resources/js/editor.js": {
+    "file": "assets/editor-BvX5ffmb.js",
+    "name": "editor",
+    "src": "resources/js/editor.js",
+    "isEntry": true,
+    "css": [
+      "assets/editor-4NrGFdfz.css"
+    ],
+    "assets": [
+      "assets/Roboto-Regular-BHeBnKzs.ttf",
+      "assets/Roboto-Medium-CFKDKRMh.ttf",
+      "assets/PlaywriteDEGrund-VariableFont_wght-uJ25rfUC.ttf",
+      "assets/Merriweather-Light-B70-7h_b.ttf",
+      "assets/Merriweather-Regular-rtU9Xc2a.ttf",
+      "assets/Montserrat-Medium-DZ4qtIu-.ttf"
+    ]
+  },
+  "resources/js/navbar.js": {
+    "file": "assets/navbar-BNVKlevV.js",
+    "name": "navbar",
+    "src": "resources/js/navbar.js",
+    "isEntry": true
+  },
+  "resources/js/sidebar.js": {
+    "file": "assets/sidebar-DZ13NIC3.js",
+    "name": "sidebar",
+    "src": "resources/js/sidebar.js",
+    "isEntry": true
+  },
+  "resources/js/style.js": {
+    "file": "assets/style-DQd649Rb.js",
+    "name": "style",
+    "src": "resources/js/style.js",
+    "isEntry": true
+  },
+  "resources/js/testimonial.js": {
+    "file": "assets/testimonial-i6ekTPwf.js",
+    "name": "testimonial",
+    "src": "resources/js/testimonial.js",
+    "isEntry": true
+  }
+}

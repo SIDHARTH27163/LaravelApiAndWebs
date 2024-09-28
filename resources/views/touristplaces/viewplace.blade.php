@@ -134,7 +134,7 @@
                         @endif
 
                         </div>
-                        <section class="flex flex-col p-10">
+                        <section class="flex flex-col ">
                             <header class="flex flex-wrap gap-5 justify-between w-full text-4xl tracking-wide leading-none text-black max-w-[1147px] ">
                               <h1>About {{$place->title}} </h1>
 
@@ -182,7 +182,7 @@
                             </footer>
                           </section>
                           <section>
-                          <div class="mx-auto p-2 grid grid-cols-3 gap-4">
+                          <div class="mx-auto  grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
                             @if($place->gallery->isNotEmpty())
                             @foreach($place->gallery as $image)
                                 <img src="{{ asset('storage/' . $image->gallery) }}" alt="{{ $place->title }}" class="h-64 w-full aspect-[2.75] ">

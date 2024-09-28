@@ -68,7 +68,7 @@
             <!-- Time To Visit -->
 </div>
 <div class="rounded-lg shadow-sm bg-white p-4 my-3">
-            @include('components.input', [
+    @include('components.texteditor', [
                 'name' => 'time_to_visit',
                 'type' => 'test',
                 'placeholder' => 'Best Time To Visit',
@@ -203,6 +203,7 @@
                                     <tr>
 
                                         <th scope="col" class="px-4 py-3">Title</th>
+                                        <th scope="col" class="px-4 py-3">Status</th>
                                         <th scope="col" class="px-4 py-3">Category</th>
                                         <th scope="col" class="px-4 py-3">About</th>
 
@@ -218,6 +219,9 @@
                                         @foreach ($touristPlaces as $place)
                                             <tr class="border-b dark:border-gray-700 font-Robotomedium">
                                                 <td class="px-4 py-3">{{ $place->title }}</td>
+                                                <td class="px-4 py-3">
+                                                    {{$place->status}}
+                                                </td>
                                                 <td class="px-4 py-3">{{ $place->category }}</td>
                                                 <td class="px-4 py-3">{!! $place->about !!}</td>
                                                 <!-- Display location address -->

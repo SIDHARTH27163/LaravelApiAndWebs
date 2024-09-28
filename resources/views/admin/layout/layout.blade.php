@@ -90,36 +90,31 @@
                 </ul>
              </li>
              <li>
-                <button type="button" class="flex items-center w-full p-2  transition duration-75 rounded-lg group  text-white hover:bg-gray-900" aria-controls="dropdown-example_state" data-collapse-toggle="dropdown-example_blogs">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-sky-300">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
-    </svg>
-
-
-
-                      <span class="flex-1 ml-3 text-left whitespace-nowrap" sidebar-toggle-item>Blogs Management</span>
-                      <svg sidebar-toggle-item class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                <button type="button" class="flex items-center w-full p-2 transition duration-75 rounded-lg group text-white hover:bg-gray-900" aria-controls="dropdown-footer" data-collapse-toggle="dropdown-footer">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-sky-300">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                    </svg>
+                    <span class="flex-1 ml-3 text-left whitespace-nowrap" sidebar-toggle-item>Footer Management</span>
+                    <svg sidebar-toggle-item class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
                 </button>
-                <ul id="dropdown-example_blogs" class="hidden py-2 space-y-2">
-
-                      <li>
-                         <a href="manage_blogs_location" class="flex items-center w-full p-2  transition duration-75 rounded-lg pl-11 group  text-white hover:bg-gray-900 font-roboto">Manage Locations</a>
-                      </li>
-
-                      <li>
-                         <a href="manage_blogs_category" class="flex items-center w-full p-2  transition duration-75 rounded-lg pl-11 group  text-white hover:bg-gray-900 font-roboto">Manage Category</a>
-                      </li>
-
-
-                      <li>
-                         <a href="admin_blogs" class="flex items-center w-full p-2  transition duration-75 rounded-lg pl-11 group  text-white hover:bg-gray-900 font-roboto">Manage Blogs</a>
-                      </li>
-                      <li>
-                         <a href="blogs_comments" class="flex items-center w-full p-2  transition duration-75 rounded-lg pl-11 group  text-white hover:bg-gray-900 font-roboto">Manage  Comments</a>
-                      </li>
-
+                <ul id="dropdown-footer" class="hidden py-2 space-y-2">
+                    <li>
+                        <a href="{{ route('footer.edit', 'privacy-policy') }}" class="flex items-center w-full p-2 transition duration-75 rounded-lg pl-11 group text-white hover:bg-gray-900 font-roboto">Manage Privacy Policy</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('footer.edit', 'terms-and-conditions') }}" class="flex items-center w-full p-2 transition duration-75 rounded-lg pl-11 group text-white hover:bg-gray-900 font-roboto">Manage Terms and Conditions</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('footer.edit', 'about-us') }}" class="flex items-center w-full p-2 transition duration-75 rounded-lg pl-11 group text-white hover:bg-gray-900 font-roboto">Manage About Us</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('footer.edit', 'disclaimer') }}" class="flex items-center w-full p-2 transition duration-75 rounded-lg pl-11 group text-white hover:bg-gray-900 font-roboto">Manage Disclaimer</a>
+                    </li>
                 </ul>
-             </li>
+            </li>
+
              <li>
                 <button type="button" class="flex items-center w-full p-2  transition duration-75 rounded-lg group  text-white hover:bg-gray-900" aria-controls="dropdown-example_state" data-collapse-toggle="dropdown-example_it">
                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-green-400">

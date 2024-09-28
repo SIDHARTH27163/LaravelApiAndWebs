@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,32 +28,26 @@
         <div class="content-container">
             <!-- Image Section -->
             <div class="image-container">
-                <img src="{{asset('assets/hii.png')}}" alt="Welcome To Lookin" class="right-image">
+                <img src="{{asset('assets/oops.png')}}" alt="Welcome To Lookin" class="right-image">
             </div>
 
             <!-- Text Section -->
             <div class="text-container">
                 <span class="container grey-text text-lighten-1">
-                    <p class="flow-text">Welcome To</p>
+                    <p class="flow-text">Sorry From</p>
                     <h1 class="title grey-text text-lighten-3">Lookin</h1>
                     <blockquote class="flow-text font-playwrite">
-                      Something Special To Explore
+                        <div class="px-4 text-lg text-gray-500 border-r border-gray-400 tracking-wider">
+                            @yield('code')
+                         </div>
+
+                         <div class="ml-4 text-lg text-gray-500 uppercase tracking-wider">
+                             @yield('message')
+                         </div>
                     </blockquote>
-                    <!-- HTML !-->
-<a href="/touristplaces" class="button-29" role="button">Lets Continue</a>
-
-
                 </span>
             </div>
         </div>
     </main>
-    <div class="footer">
-        <ul class="footer-links">
-            <li><a href="/privacy-policy">Privacy Policy</a></li>
-            <li><a href="/terms-and-conditions">Terms and Conditions</a></li>
-            <li><a href="/about-us">About Us</a></li>
-            <li><a href="/disclaimer">Disclaimer</a></li>
-        </ul>
-      </div>
 </body>
 </html>

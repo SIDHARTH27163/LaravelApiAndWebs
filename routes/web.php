@@ -7,6 +7,7 @@ use App\Http\Controllers\ImageUploadController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\TouristPlaceController;
 use App\Http\Controllers\LocationController;
+use App\Http\controllers\FooterController;
 
 // use App\Http\Middleware\LogRequestMiddleware;
 // Route::middleware(LogRequestMiddleware::class)->group(function () {
@@ -20,6 +21,9 @@ Route::view('home', 'home');
 Route::prefix('admin')->group(function () {
     // Admin dashboard route
     Route::view('/', 'admin.admin')->name('admin.dashboard');
+    Route::get('footer/edit/{type}', [FooterController::class, 'edit'])->name('footer.edit');
+    Route::post('footer/update/{id}', [FooterController::class, 'update'])->name('footer.update');
+
     // Route::view('manage-categories', 'admin.categories');
     Route::resource('manage-categories', CategoryController::class);
     Route::post('/categories/{id}/toggle-status', [CategoryController::class, 'changeStatus'])->name('categories.toggle-status');
@@ -63,3 +67,5 @@ Route::prefix('touristplaces')->group(function () {
     // Add a prefix to distinguish category from title
     Route::get('Category/{category}', [TouristPlaceController::class, 'filterbyCategory'])->name('touristplaces.filterPlaceCategory');
 });
+// routes/web.php
+Route::get('/{type}', [FooterController::class, 'show'])->where('type', 'privacy-policy|terms-and-conditions|about-us|disclaimer');

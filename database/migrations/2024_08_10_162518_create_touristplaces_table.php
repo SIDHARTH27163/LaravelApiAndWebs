@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('tourist_places', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('location_id'); // Make sure this column exists
-            $table->enum('status', ['active', 'inactive'])->default('inactive');
+            $table->enum('status', ['active', 'inactive'])->default('active');
             $table->string('category');
             $table->string('title');
             $table->text('about');

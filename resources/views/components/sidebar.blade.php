@@ -98,55 +98,5 @@
   </section>
 
    {{-- categopries --}}
-  {{-- social media --}}
-  <section class="flex flex-col items-center max-w-full">
-    <header class="self-stretch px-16 pt-8 pb-8 w-full text-3xl font-bold leading-none text-black bg-white">
-      <h2>Get In Touch</h2>
-    </header>
-    <div class="flex gap-4 mt-2 w-full ">
-      <article class="flex flex-1 gap-8 px-7 py-5 text-base font-semibold leading-4 text-white bg-indigo-800 rounded-lg">
-        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/aa242c2f29e9aa200577c2cb8f4f10a0a9ff4b5c3a3d61ebb48d2f2dccc9fd4c?placeholderIfAbsent=true&apiKey=c81a87a8b87043acac16b0e47d857063" class="object-contain shrink-0 self-start w-4 aspect-[0.5]" alt="Likes icon" />
-        <div>
-          <span class="font-bold">65.5K</span>
-          <br />
-          <span class="font-medium">Likes</span>
-        </div>
-      </article>
-      <article class="flex flex-col flex-1">
-        <div class="flex gap-5 justify-between px-5 py-5 bg-blue-400 rounded-lg">
-          <div class="flex overflow-hidden flex-col self-start mt-1">
-            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/5b6d75f961dc00703de124962f10b158e90687ee29f1fadb05b443dc1dd053a8?placeholderIfAbsent=true&apiKey=c81a87a8b87043acac16b0e47d857063" class="object-contain aspect-[1.29] w-[31px]" alt="Followers icon" />
-          </div>
-          <div class="text-base font-medium leading-4 text-white">
-            <span class="font-bold">105 k</span>
-            <br />
-            Followers
-          </div>
-        </div>
-      </article>
-    </div>
-    <div class="flex gap-7 mt-7 w-full max-w-[391px]">
-      <article class="flex flex-1 gap-4 px-4 py-5 text-base font-semibold leading-4 text-white bg-red-500 rounded-lg">
-        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/956b267d3a5aaf9caefc3d3bb9a45a80020e1ee4642dc2c13b14ec1a73b4b0fb?placeholderIfAbsent=true&apiKey=c81a87a8b87043acac16b0e47d857063" class="object-contain shrink-0 my-auto aspect-[1.43] w-[30px]" alt="Subscribers icon" />
-        <div>
-          <span class="font-bold">1.5 M</span>
-          <br />
-          Subscribers
-        </div>
-      </article>
-      <article class="flex flex-col flex-1">
-        <div class="flex gap-5 justify-between px-4 py-5 bg-pink-500 rounded-lg">
-          <div class="flex overflow-hidden flex-col self-start">
-            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/b2949108b2d9b06829946b31ab37413577fc0ad6ee7d2d3c9ee1c555debb56d6?placeholderIfAbsent=true&apiKey=c81a87a8b87043acac16b0e47d857063" class="object-contain aspect-square w-[30px]" alt="Followers icon" />
-          </div>
-          <div class="text-base font-medium leading-4 text-white">
-            <span class="font-bold">85 k</span>
-            <br />
-            Followers
-          </div>
-        </div>
-      </article>
-    </div>
-  </section>
-  {{-- social mdia --}}
+
 </div>

@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",function(){const s=document.querySelectorAll(".scroll-animation"),n=new IntersectionObserver(e=>{e.forEach(t=>{t.isIntersecting?t.target.classList.add("animate"):t.target.classList.remove("animate")})},{threshold:.2});s.forEach(e=>{n.observe(e)})});
