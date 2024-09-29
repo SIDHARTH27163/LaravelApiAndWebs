@@ -21,7 +21,7 @@ h1.title {
 
 body.welcome {
     background: #512da8;
-    overflow: hidden;
+
 }
 
 .welcome .splash {
@@ -33,7 +33,7 @@ body.welcome {
     top: 100%;
     display: block;
     box-sizing: initial;
-    overflow: hidden;
+
     border-radius: 50%;
     transform: translate(-50%, -50%);
     animation: puff 0.5s 1.8s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, borderRadius 0.2s 2.3s linear forwards;
@@ -46,7 +46,7 @@ body.welcome {
     position: absolute;
     left: 50%;
     top: 50%;
-    overflow: hidden;
+
     opacity: 0;
     transform: translate(-50%, -50%);
     border-radius: 50%;
@@ -250,7 +250,7 @@ body.welcome {
 /* footer */
 .footer {
     padding: 1.5rem;
-    position: fixed;
+
     left: 0;
     bottom: 0;
     width: 100%;

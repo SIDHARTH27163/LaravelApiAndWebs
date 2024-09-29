@@ -5,8 +5,9 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
+
                     <a href="{{ route('dashboard') }}">
-                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" />
+                        <x-application-logo class="flex flex-row  drop-shadow-lg  hover:rounded-full transform transition hover:scale-110 duration-500 ease-in-out" />
                     </a>
                 </div>
 

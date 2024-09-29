@@ -12,7 +12,7 @@
             <a href="/privacy-policy" class="hover:underline me-4 md:me-6">Privacy Policy</a>
         </li>
         <li>
-            <a href="/disclaimer" class="hover:underline me-4 md:me-6">Licensing</a>
+            <a href="/disclaimer" class="hover:underline me-4 md:me-6">Disclaimer</a>
         </li>
         <li>
             <a href="/terms-and-conditions" class="hover:underline">Terms and Conditions</a>

@@ -23,8 +23,13 @@ class ImageUploadController extends Controller
         try {
             if ($request->hasFile('image')) {
                 $file = $request->file('image');
-                $path = $file->store('editor', 'public');
-                $url = Storage::url($path);
+                // Define the path where you want to save the image
+                $path = public_path('editor'); // Ensure the 'editor' directory exists
+                $fileName = time() . '_' . $file->getClientOriginalName(); // Generate a unique file name
+                $file->move($path, $fileName); // Move the file to the specified path
+
+                // Construct the URL to access the uploaded file
+                $url = asset('editor/' . $fileName);
                 return response()->json(['url' => $url], 200);
             } else {
                 return response()->json(['error' => 'No file uploaded'], 400);

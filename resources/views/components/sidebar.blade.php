@@ -12,7 +12,7 @@
       <h2 class="self-center text-3xl font-bold leading-loose">About Us</h2>
       <img loading="lazy" src="{{asset('assets/logo.png')}}" alt="Lookin Dharamshala" class="object-contain mt-2 w-full aspect-[2]" />
       <p class="self-start mt-2 -mb-6 px-2 text-base font-playwrite text-justify font-medium leading-7">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum in vel massa donec sit. Mi ut risus sem malesuada ornare. Ac eu erat eget et lorem est arcu. Gravida hendrerit sit blandit semper lacus. Nulla amet suscipit sit lectus tortor. Dolor non eget suspendisse leo scelerisque sed d.
+        Explore Dharamshala’s top tourist spots, from peaceful monasteries and scenic tea gardens to breathtaking mountain vistas. Uncover hidden treasures and cultural landmarks that showcase the perfect harmony of natural beauty and vibrant heritage.
       </p>
 
     </article>

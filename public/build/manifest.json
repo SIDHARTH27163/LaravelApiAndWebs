@@ -5,12 +5,12 @@
     "isEntry": true
   },
   "resources/css/app.css": {
-    "file": "assets/app-D_hCgq58.css",
+    "file": "assets/app-D2y28I6h.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
   "resources/css/home.css": {
-    "file": "assets/home-tc33KCzg.css",
+    "file": "assets/home-CESAd_d3.css",
     "src": "resources/css/home.css",
     "isEntry": true
   },
@@ -37,12 +37,12 @@
     "isEntry": true
   },
   "resources/js/editor.js": {
-    "file": "assets/editor-CAcWC0U9.js",
+    "file": "assets/editor-CNVRa8MI.js",
     "name": "editor",
     "src": "resources/js/editor.js",
     "isEntry": true,
     "css": [
-      "assets/editor-CfrVSSBh.css"
+      "assets/editor-B_Zae8Ga.css"
     ]
   },
   "resources/js/navbar.js": {
@@ -52,7 +52,7 @@
     "isEntry": true
   },
   "resources/js/sidebar.js": {
-    "file": "assets/sidebar-DZ13NIC3.js",
+    "file": "assets/sidebar-ze27CCde.js",
     "name": "sidebar",
     "src": "resources/js/sidebar.js",
     "isEntry": true
