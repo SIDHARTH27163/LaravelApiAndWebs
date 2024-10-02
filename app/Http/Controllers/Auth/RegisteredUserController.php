@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\SendOTP;
 
 class RegisteredUserController extends Controller
 {
@@ -39,12 +41,20 @@ class RegisteredUserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'email_verified_at' => null, // Set this to null initially
         ]);
+        $request->session()->put('email', $user->email);
 
-        event(new Registered($user));
+        // Generate OTP and save to session or database
+        $otp = rand(100000, 999999);
+        $user->otp = $otp;
+        $user->save();
 
-        Auth::login($user);
+        // Send OTP via email
+        Mail::to($user->email)->send(new SendOTP($otp));
 
-        return redirect(route('admin.dashboard', absolute: false));
+
+        return redirect()->route('verify.email');
+
     }
 }

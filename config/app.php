@@ -122,5 +122,15 @@ return [
         'driver' => env('APP_MAINTENANCE_DRIVER', 'file'),
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
+// 'providers' => [
+//     // Other service providers...
+
+//     Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class, // Register NoCaptcha service provider
+// ],
+// 'aliases' => [
+//     // Other aliases...
+
+//     'NoCaptcha' => Anhskohbo\NoCaptcha\Facades\NoCaptcha::class, // Register NoCaptcha alias
+// ],
 
 ];
