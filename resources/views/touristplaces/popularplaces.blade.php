@@ -43,14 +43,14 @@
       {{-- filters --}}
       <section class="py-3 flex lg:flex-row md:flex-row sm:flex-col flex-col px-4 space-x-2">
         @include('components/sidebar')
-        <div class="flex-grow max-w-6xl">
+          <div class="flex-grow lg:max-w-7xl md:ma-w-6xl mx-auto">
 
             <div class=" flex flex-col items-center justify-center lg:p-6 md:p-5 sm:p-2 p-1">
 
                   {{-- top cards --}}
                   <section class="py-5">
 
-                    <div class="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 grid-cols-2  gap-5 py-5">
+                    <div class="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 grid-cols-1  gap-5 py-5">
 
                         @foreach($touristPlaces as $place)
                         @include('components.default-card', [

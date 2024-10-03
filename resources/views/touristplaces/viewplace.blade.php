@@ -43,7 +43,7 @@
       {{-- filters --}}
       <section class="py-3 flex lg:flex-row md:flex-row sm:flex-col flex-col px-4 space-x-2">
         @include('components/sidebar')
-        <div class="flex-grow max-w-6xl">
+         <div class="flex-grow lg:max-w-7xl md:ma-w-6xl mx-auto">
 
             <div class=" flex flex-col items-center justify-center lg:p-6 md:p-5 sm:p-2 p-1">
 
@@ -53,7 +53,7 @@
                   {{-- title --}}
                   <div class="z-10  w-full ">
                     <div class="flex gap-5 max-md:flex-col">
-                      <div class="flex flex-col w-1/2 max-md:ml-0 max-md:w-full">
+                      <div class="flex flex-col w-1/2  max-md:w-full">
                         <div class="flex flex-col font-Robotomedium w-full text-4xl font-bold tracking-tighter text-justify text-slate-900 max-md:mt-10 ">
 
                           <h2 class=" p-2 mt-1 underline ">
@@ -74,7 +74,7 @@
                             </div>
                         </div>
                       </div>
-                      <div class="flex flex-col ml-5 w-1/2 max-md:ml-0 max-md:w-full">
+                      <div class="flex flex-col  w-1/2  max-md:w-full">
                         <p class="text-lg  tracking-wide leading-8 text-black max-md:mt-10  text-justify font-Robotoregular">
                          {{$place->about}}
                         </p>
@@ -83,7 +83,7 @@
                   </div>
                  {{-- title ends --}}
                  {{-- more time --}}
-                 <div class="flex flex-col pl-10 mt-5 w-full text-lg  tracking-wide leading-10 text-black max-md:pl-5 max-md:mt-10 ">
+                 <div class="flex flex-col mt-5 w-full text-lg  tracking-wide leading-10 text-black  max-md:mt-10 ">
                     <img loading="lazy" src={{asset($place->location->image)}} alt="" class="object-contain w-full aspect-[2.75] " />
                    <!-- Display Tips -->
                   @if($place->tips->isNotEmpty())
@@ -109,7 +109,7 @@
 
                   </div>
                   {{-- new sections --}}
-                   <div class="flex flex-col pl-10 mt-5 w-full text-lg  tracking-wide leading-10 text-black max-md:pl-5 max-md:mt-10 ">
+                   <div class="flex flex-col  mt-5 w-full text-lg  tracking-wide leading-10 text-black  max-md:mt-10 ">
                     <header class="flex flex-wrap gap-5 justify-between w-full text-4xl tracking-wide leading-none text-black  ">
                         <h1>About {{$place->title}} </h1>
 
@@ -137,7 +137,7 @@
                           <p>No  information available.</p>
                           @endif
                         </article>
-                        <article class="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
+                        <article class="flex flex-col w-6/12  max-md:w-full">
                             @if($place->transportations->isNotEmpty())
                             @foreach($place->transportations as $transportation)
                           <p class="text-lg text-justify tracking-wide leading-8 font-Robotoregular text-black max-md:mt-10 ">
