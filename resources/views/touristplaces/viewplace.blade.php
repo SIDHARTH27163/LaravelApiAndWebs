@@ -45,19 +45,20 @@
         @include('components/sidebar')
          <div class="flex-grow lg:max-w-7xl md:ma-w-6xl mx-auto">
 
-            <div class=" flex flex-col items-center justify-center lg:p-6 md:p-5 sm:p-2 p-1">
+            <div class=" flex flex-col items-center justify-center lg:p-6 md:p-5 sm:p-2 p-1 ">
 
-                @foreach($touristPlace as $place)
-                  <div class="py-5">
 
+
+                <div class="py-5 text-justify">
+                    @foreach($touristPlace as $place)
                   {{-- title --}}
-                  <div class="z-10  w-full ">
-                    <div class="flex gap-5 max-md:flex-col">
-                      <div class="flex flex-col w-1/2  max-md:w-full">
-                        <div class="flex flex-col font-Robotomedium w-full text-4xl font-bold tracking-tighter text-justify text-slate-900 max-md:mt-10 ">
+                  <div class="z-10  w-auto ">
+                    <div class="flex flex-col w-full">
+                      <div class="">
+                        <div class=" font-Robotomedium w-full text-4xl font-bold tracking-tighter text-justify text-slate-900 max-md:mt-10 ">
 
                           <h2 class=" p-2 mt-1 underline ">
-                           {{$place->title}}
+                           {!!$place->title!!}
 
                           </h2>
                           <h2 class=" p-2 mt-1 underline ">
@@ -74,9 +75,9 @@
                             </div>
                         </div>
                       </div>
-                      <div class="flex flex-col  w-1/2  max-md:w-full">
-                        <p class="text-lg  tracking-wide leading-8 text-black max-md:mt-10  text-justify font-Robotoregular">
-                         {{$place->about}}
+                      <div class="">
+                        <p class="text-xl  tracking-wide leading-10 text-black max-md:mt-10  text-justify font-Robotoregular">
+                         {!!$place->about!!}
                         </p>
                       </div>
                     </div>
@@ -89,7 +90,7 @@
                   @if($place->tips->isNotEmpty())
                   @foreach($place->tips as $tip)
                       <p class="mt-14 max-md:mt-10  font-Robotoregular text-justify">
-                          {{ $tip->tip }}
+                          {!! $tip->tip !!}
                       </p>
                   @endforeach
                   @else
@@ -100,7 +101,7 @@
                   @if($place->timeToVisits->isNotEmpty())
                   @foreach($place->timeToVisits as $timeToVisit)
                       <p class="mt-4  font-Robotoregular text-justify">
-                          {{ $timeToVisit->time_to_visit }}
+                          {!! $timeToVisit->time_to_visit !!}
                       </p>
                   @endforeach
                   @else
@@ -111,37 +112,37 @@
                   {{-- new sections --}}
                    <div class="flex flex-col  mt-5 w-full text-lg  tracking-wide leading-10 text-black  max-md:mt-10 ">
                     <header class="flex flex-wrap gap-5 justify-between w-full text-4xl tracking-wide leading-none text-black  ">
-                        <h1>About {{$place->title}} </h1>
+                        <h1>About {!!$place->title!!} </h1>
 
                       </header>
                       <div class="flex flex-wrap gap-10 mt-2 text-lg  tracking-wide leading-10 text-black">
                         @if($place->accommodations->isNotEmpty())
                         @foreach($place->accommodations as $accommodation)
                             <p class="mt-4  font-Robotoregular text-justify">
-                                {{ $accommodation->accommodation }}
+                                {!! $accommodation->accommodation !!}
                             </p>
                         @endforeach
                         @else
                         <p>No  information available.</p>
                         @endif
                       </div>
-                      <div class="flex gap-5 max-md:flex-col mt-5">
-                        <article class="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
+                      <div class="mt-5">
+                        <article class=" max-md:ml-0 max-md:w-full">
                             @if($place->activities->isNotEmpty())
                             @foreach($place->activities as $activity)
                           <p class="text-lg text-justify tracking-wide leading-8 font-Robotoregular text-black max-md:mt-10 ">
-                            {{ $activity->activity }}
+                            {!! $activity->activity !!}
                           </p>
                           @endforeach
                           @else
                           <p>No  information available.</p>
                           @endif
                         </article>
-                        <article class="flex flex-col w-6/12  max-md:w-full">
+                        <article class="  max-md:w-full">
                             @if($place->transportations->isNotEmpty())
                             @foreach($place->transportations as $transportation)
                           <p class="text-lg text-justify tracking-wide leading-8 font-Robotoregular text-black max-md:mt-10 ">
-                            {{ $transportation->transportation }}
+                            {!! $transportation->transportation !!}
                           </p>
                           @endforeach
                           @else
@@ -152,19 +153,19 @@
                    </div>
 
 
-                   <div class="mx-auto  grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 mt-10 max-w-5xl">
+                   <div class="mx-auto  grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 grid-cols-2 gap-4 mt-10 max-w-5xl">
                     @if($place->gallery->isNotEmpty())
                     @foreach($place->gallery as $image)
-                        <img src="{{ asset( $image->gallery) }}" alt="{{ $place->title }}" class="h-64 w-full aspect-[2.75] ">
+                        <img src="{{ asset( $image->gallery) }}" alt="{{ $place->title }}" class="h-48 w-full aspect-[2.75] ">
                     @endforeach
                 @else
                     <p>No images available</p>
                 @endif
                   </div>
-                  {{-- /new sections --}}
-                  </div>
                   @endforeach
 
+                  {{-- /new sections --}}
+                  </div>
 
 
 

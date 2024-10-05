@@ -1,6 +1,6 @@
 @props([ 'link'=>'','title' => '', 'date', '' , 'location' =>'' , 'comment'=>'' , 'class'=>'' ,  'description' => '' , 'image'=>''])
-<article class="flex flex-col  pb-4 w-full bg-white  max-md:max-w-full  drop-shadow-lg  mt-2">
-    <img loading="lazy" src="{{$image}}" alt="{{$location}}" class="  w-full aspect-[1.5] max-md:max-w-full" />
+<article class="flex flex-col  pb-4 w-full bg-white  max-md:max-w-full  drop-shadow-lg  mt-2 py-2">
+    <img loading="lazy" src="{{$image}}" alt="{{$location}}" class=" object-contain object-center h-1/2  w-full  aspect-[1.5] max-md:max-w-full" />
     <header class="flex text-amber-600 gap-2.5 items-start self-start mt-4 leading-tight lg:text-base md:text-base sm:text-xs text-xs">
             <div class="flex shrink-0 mt-1.5 h-6 bg-amber-500 w-[3px] " aria-hidden="true"></div>
             <time datetime="2021-09-17">{{$date}}</time>
@@ -11,7 +11,7 @@
               </h2></a>
               @if(!empty($description))
         <p class="mt-2 whitespace-normal tracking-wide mx-2 text-lg text-justify leading-7 max-md:mt-6 max-md:max-w-full font-Robotoregular">
-            {{ $description }}
+            {!! $description !!}
         </p>
     @endif
           </div>

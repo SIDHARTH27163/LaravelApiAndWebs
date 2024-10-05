@@ -92,9 +92,10 @@ Route::resource('manage-categories', CategoryController::class);
 Route::post('/categories/{id}/toggle-status', [CategoryController::class, 'changeStatus'])->name('categories.toggle-status');
 
 Route::resource('touristplaces', TouristPlaceController::class)->except(['show']);
-Route::get('/tourist-places/search', [TouristPlaceController::class, 'search'])->name('touristplaces.search');
 
+Route::get('/tourist-places/search', [TouristPlaceController::class, 'search'])->name('touristplaces.search');
 Route::resource('managelocations', LocationController::class)->except(['show']);
+
 Route::post('/managelocations/{id}/toggle-status', [LocationController::class, 'changeStatus'])->name('managelocations.toggle-status');
 
 // Resource routes for managing IT services
@@ -124,8 +125,7 @@ Route::post('/upload', [ImageUploadController::class, 'upload']);
 Route::prefix('touristplaces')->group(function () {
 Route::get('/', [TouristPlaceController::class, 'home'])->name('touristplaces.home');
 Route::get('popularplaces', [TouristPlaceController::class, 'popularPlaces'])->name('touristplaces.popularplaces');
-Route::get('{title}', [TouristPlaceController::class, 'viewtouristplace'])->name('touristplaces.viewplace')
-    ->where('title', '[A-Za-z0-9\-]+'); // Restrict to only match titles
+Route::get('{title}', [TouristPlaceController::class, 'viewtouristplace'])->name('touristplaces.viewplace'); // Restrict to only match titles
 
 // Add a prefix to distinguish category from title
 Route::get('Category/{category}', [TouristPlaceController::class, 'filterbyCategory'])->name('touristplaces.filterPlaceCategory');

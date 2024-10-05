@@ -138,6 +138,9 @@ class TouristPlaceController extends Controller
 
     public function update(Request $request, $id)
     {
+
+        // print_r($id);
+        // die;
         \DB::transaction(function () use ($request, $id) {
             // Update TouristPlace
             $touristPlace = TouristPlace::findOrFail($id);
@@ -340,6 +343,7 @@ public function popularPlaces(Request $request)
 
 public function viewtouristplace(Request $request , $title)
 {
+
     $text=str_replace('-', ' ', $title);
 
     // Fetch common data
